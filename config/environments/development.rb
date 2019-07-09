@@ -1,11 +1,20 @@
 Rails.application.configure do
-  config.action_mailer.delivery_method = :mailgun
-  #SMTP settings for gmail
-  config.action_mailer.mailgun_settings = {
-    api_key: '65e72c0d0e277d2a71e611ae53cd8b0e-2b0eef4c-57c5e806',
-    domain: 'sandboxf096705c0ce94bc5806573a4191ef7b7.mailgun.org'
-    # api_key: ENV['API_KEY'],
-    # domain: ENV['DOMAIN']
+  # config.action_mailer.delivery_method = :mailgun
+  # #SMTP settings for mailgun
+  # config.action_mailer.mailgun_settings = {
+  #   api_key: '65e72c0d0e277d2a71e611ae53cd8b0e-2b0eef4c-57c5e806',
+  #   domain: 'sandboxf096705c0ce94bc5806573a4191ef7b7.mailgun.org'
+  # }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'example.com',
+    user_name:            'superionic423@gmail.com',
+    password:             '',
+    authentication:       'plain',
+    enable_starttls_auto: true
   }
 
   # Settings specified here will take precedence over those in config/application.rb.
