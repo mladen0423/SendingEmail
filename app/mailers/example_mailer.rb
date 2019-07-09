@@ -3,6 +3,6 @@ class ExampleMailer < ApplicationMailer
 
   def sample_email(user)
     @user = user
-    mail from: 'sasa.savic.upwork@gmail.com', to: @user.email, subject: "sample email", body: "body content"
+    mail from: 'Service Team', to: @user.email, subject: "sample email", body: "body content"
   end
 end
